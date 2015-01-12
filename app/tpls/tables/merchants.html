@@ -32,16 +32,17 @@
 			});
 		});
 		</script>
-		
-		<table class="table table-bordered table-striped" id="example-4">
+                <div class="row"><input ng-model="query" class="form-control" placeholder="Search" /></div>
+                <div class="row">
+                    		<table  class="table table-hover">
 			<thead>
 				<tr>
 					<th>Name</th>
 					<th>Phone</th>
-					<th>Email</th>
 					<th>Business</th>
 					<th>Twitter</th>
 					<th>Facebook</th>
+					<th>Report</th>
 				</tr>
 			</thead>
 		 
@@ -49,25 +50,26 @@
 				<tr>
 					<th>Name</th>
 					<th>Phone</th>
-					<th>Email</th>
 					<th>Business</th>
 					<th>Twitter</th>
 					<th>Facebook</th>
+					<th>Report</th>
 				</tr>
 			</tfoot>
 		 
 			<tbody>
-                            <tr ng-repeat="deal in deals">
+                            <tr ng-repeat="deal in deals | filter : query">
                                 <td> {{ deal.merchantName}} </td>
                                 <td>{{ deal.merchantPhone}}</td>
-                                <td >{{ deal.merchantEmail}}</td>
                                 <td >{{ deal.merchantBusiness}}</td>
                                 <td >{{ deal.merchantTwitter}}</td>
                                 <td >{{ deal.merchantFacebook}}</td>
+                                <td ><a  target="_blank" href="twitter.com/{{ deal.merchantTwitter}}"> {{ deal.merchantTwitter}} </a></td>
 				</tr>
 			
 			</tbody>
 		</table>
+                </div>
 		
 	</div>
 </div>

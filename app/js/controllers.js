@@ -26,7 +26,7 @@ angular.module('xenon.controllers', []).
 	{
             $scope.getData=function()
             {
-                $http.get('http://localhost/beta/data/data.php').success(function(data){
+                $http.get('http://localhost/bymoAdmin/data/data.php').success(function(data){
                     $scope.deals=data;
                 });
             };
